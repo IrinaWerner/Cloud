@@ -40,7 +40,7 @@
             <column name="DESCRIPTION" type="VARCHAR(256)"/>
 
             <column name="CREATED" type="TIMESTAMP" defaultValue="CURRENT_TIMESTAMP">
-                <constraints nullable="false"
+                <constraints nullable="false"/>
             </column>
 
             <column name="MODIFIED" type="TIMESTAMP" defaultValue="CURRENT_TIMESTAMP">

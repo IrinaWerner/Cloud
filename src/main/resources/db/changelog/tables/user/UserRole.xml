@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.11.xsd">
+    <changeSet id="USER-ROLE-001" author="werner_id">
+        <preConditions>
+            <not>
+                <sequenceExists schemaName="REPOSITORY" sequenceName="USER_ROLE_SEQ"/>
+            </not>
+        </preConditions>
+        <createSequence schemaName="REPOSITORY"  sequenceName="USER_ROLE_SEQ" startValue="0"/>
+    </changeSet>
+
+    <changeSet id="USER-ROLE-002" author="werner_id">
+        <preConditions>
+            <not>
+                <tableExists schemaName="REPOSITORY"  tableName="USER_ROLE"/>
+            </not>
+        </preConditions>
+        <createTable schemaName="REPOSITORY" tableName="USER_ROLE">
+            <column name="USER_ROLE_ID" type="INT" defaultValueSequenceNext="USER_ROLE_SEQ"> 
+                <constraints primaryKey="true" primaryKeyName="USER_ROLE_PK"/>
+            </column>
+            <column name="USER_ID" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ROLE_ID" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CREATED" type="TIMESTAMP" defaultValue="CURRENT_TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MODIFIED" type="TIMESTAMP" defaultValue="CURRENT_TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
