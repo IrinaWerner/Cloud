@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="USER-STATUS-001" author="vyushin_aa">
+
+        <preConditions>
+            <tableIsEmpty schemaName="REPOSITORY" tableName="USER_STATUS"/>
+        </preConditions>
+
+        <insert  schemaName="REPOSITORY" tableName="USER_STATUS">
+            <column name="NAME" value="ACTIVE"/>
+            <column name="DESCRIPTION" value="Статус активного пользователя"/>
+        </insert>
+
+        <insert  schemaName="REPOSITORY" tableName="USER_STATUS">
+            <column name="NAME" value="INACTIVE"/>
+            <column name="DESCRIPTION" value="Статус неактивного пользователя"/>
+        </insert>
+
+    </changeSet>
+</databaseChangeLog>
