@@ -6,5 +6,6 @@
         https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.11.xsd">
 
     <includeAll path="classpath:/db/changelog/tables"/>
+    <includeAll path="classpath:/db/changelog/constraints"/>
 
 </databaseChangeLog>
