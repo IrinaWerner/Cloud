@@ -23,7 +23,7 @@
         </preConditions>
        <createTable schemaName="REPOSITORY" tableName="USERS">
            <column name="USER_ID" type="INT" defaultValueSequenceNext="USER_SEQ">
-               <constraints primaryKey="true" primaryKeyName="USERS_PK"/>
+               <constraints primaryKey="true" primaryKeyName="USERS-PK"/>
            </column>
            <column name="LOGIN" type="VARCHAR(50)">
                <constraints nullable="false" unique="true"/>
