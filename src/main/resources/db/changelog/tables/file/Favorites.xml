@@ -20,7 +20,7 @@
         </preConditions>
         <createTable schemaName="REPOSITORY" tableName="FAVORITES">
             <column name="FAVORITES_ID" type="INT" defaultValueSequenceNext="FAVORITES_SEQ">
-                <constraints primaryKey="true" primaryKeyName="FILE_EXTENSION-PK"/>
+                <constraints primaryKey="true" primaryKeyName="FAVORITES-PK"/>
             </column>
 
             <column name="FILE_ID" type="INT">
