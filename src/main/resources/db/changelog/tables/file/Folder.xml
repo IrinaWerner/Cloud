@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.11.xsd">
+    <changeSet id="FOLDER-001" author="werner_id">
+        <preConditions>
+            <not>
+                <sequenceExists schemaName="REPOSITORY" sequenceName="FOLDER_SEQ"/>
+            </not>
+        </preConditions>
+        <createSequence schemaName="REPOSITORY" sequenceName="FOLDER_SEQ" startValue="0"/>
+    </changeSet>
+    <changeSet id="FOLDER-002" author="werner_id">
+        <preConditions>
+            <not>
+                <tableExists schemaName="REPOSITORY" tableName="FOLDER"/>
+            </not>
+        </preConditions>
+        <createTable schemaName="REPOSITORY" tableName="FOLDER">
+            <column name="FOLDER_ID" type="INT" defaultValueSequenceNext="FOLDER_SEQ">
+                <constraints primaryKey="true" primaryKeyName="FOLDER-PK"/>
+            </column>
+
+            <column name="PARENT_FOLDER_ID" type="INT"/>
+
+            <column name="NAME" type="VARCHAR(256)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="DESCRIPTION" type="VARCHAR(256)"/>
+
+            <column name="CREATED" type="TIMESTAMP" defaultValue="CURRENT_TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="MODIFIED" type="TIMESTAMP" defaultValue="CURRENT_TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

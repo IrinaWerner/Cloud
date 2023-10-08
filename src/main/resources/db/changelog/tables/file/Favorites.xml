@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.11.xsd">
+    <changeSet id="FAVORITES-001" author="werner_id">
+        <preConditions>
+            <not>
+                <sequenceExists schemaName="REPOSITORY" sequenceName="FAVORITES_SEQ"/>
+            </not>
+        </preConditions>
+        <createSequence schemaName="REPOSITORY" sequenceName="FAVORITES_SEQ" startValue="0"/>
+    </changeSet>
+    <changeSet id="FAVORITES-002" author="werner_id">
+        <preConditions>
+            <not>
+                <tableExists schemaName="REPOSITORY" tableName="FAVORITES"/>
+            </not>
+        </preConditions>
+        <createTable schemaName="REPOSITORY" tableName="FAVORITES">
+            <column name="FAVORITES_ID" type="INT" defaultValueSequenceNext="FAVORITES_SEQ">
+                <constraints primaryKey="true" primaryKeyName="FILE_EXTENSION-PK"/>
+            </column>
+
+            <column name="FILE_ID" type="INT">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="USER_ID" type="INT">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="CREATED" type="TIMESTAMP" defaultValue="CURRENT_TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="MODIFIED" type="TIMESTAMP" defaultValue="CURRENT_TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

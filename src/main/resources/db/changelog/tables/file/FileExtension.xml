@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.11.xsd">
+    <changeSet id="FILE_EXTENSION-001" author="werner_id">
+        <preConditions>
+            <not>
+                <sequenceExists schemaName="REPOSITORY" sequenceName="FILE_EXTENSION_SEQ"/>
+            </not>
+        </preConditions>
+        <createSequence schemaName="REPOSITORY" sequenceName="FILE_EXTENSION_SEQ" startValue="0"/>
+    </changeSet>
+    <changeSet id="FILE-EXTENSION-002" author="werner_id">
+        <preConditions>
+            <not>
+                <tableExists schemaName="REPOSITORY" tableName="FILE_EXTENSION"/>
+            </not>
+        </preConditions>
+        <createTable schemaName="REPOSITORY" tableName="FILE_EXTENSION">
+            <column name="FILE_EXTENSION_ID" type="INT" defaultValueSequenceNext="FILE_EXTENSION_SEQ">
+                <constraints primaryKey="true" primaryKeyName="FILE_EXTENSION-PK"/>
+            </column>
+
+            <column name="NAME" type="VARCHAR(70)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="DESCRIPTION" type="VARCHAR(256)"/>
+
+            <column name="CREATED" type="TIMESTAMP" defaultValue="CURRENT_TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="MODIFIED" type="TIMESTAMP" defaultValue="CURRENT_TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
