@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet id="ROLE-001" author="werner_id">
+
+        <preConditions>
+            <tableIsEmpty schemaName="REPOSITORY" tableName="ROLE"/>
+        </preConditions>
+
+        <insert  schemaName="REPOSITORY" tableName="ROLE">
+            <column name="NAME" value="STANDARD_RIGHTS"/>
+            <column name="DESCRIPTION" value="Стандартные права пользователя"/>
+        </insert>
+
+        <insert  schemaName="REPOSITORY" tableName="ROLE">
+            <column name="NAME" value="VIP_RIGHTS"/>
+            <column name="DESCRIPTION" value="Расширенные права пользователя"/>
+        </insert>
+
+        <insert  schemaName="REPOSITORY" tableName="ROLE">
+            <column name="NAME" value="ADMIN"/>
+            <column name="DESCRIPTION" value="Полные права (Админ)"/>
+        </insert>
+
+    </changeSet>
+</databaseChangeLog>

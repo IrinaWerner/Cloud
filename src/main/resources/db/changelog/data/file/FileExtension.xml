@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet id="FILE_EXTENSION-001" author="werner_id">
+
+        <preConditions>
+            <tableIsEmpty schemaName="REPOSITORY" tableName="FILE_EXTENSION"/>
+        </preConditions>
+
+        <insert  schemaName="REPOSITORY" tableName="FILE_EXTENSION">
+            <column name="NAME" value="jpg"/>
+            <column name="DESCRIPTION" value="Изображение"/>
+        </insert>
+
+        <insert  schemaName="REPOSITORY" tableName="FILE_EXTENSION">
+            <column name="NAME" value="png"/>
+            <column name="DESCRIPTION" value="Изображение"/>
+        </insert>
+
+        <insert  schemaName="REPOSITORY" tableName="FILE_EXTENSION">
+            <column name="NAME" value="bmp"/>
+            <column name="DESCRIPTION" value="Изображение"/>
+        </insert>
+
+        <insert  schemaName="REPOSITORY" tableName="FILE_EXTENSION">
+            <column name="NAME" value="gif"/>
+            <column name="DESCRIPTION" value="Изображение"/>
+        </insert>
+
+        <insert  schemaName="REPOSITORY" tableName="FILE_EXTENSION">
+            <column name="NAME" value="tif"/>
+            <column name="DESCRIPTION" value="Изображение"/>
+        </insert>
+
+        <insert  schemaName="REPOSITORY" tableName="FILE_EXTENSION">
+            <column name="NAME" value="doc"/>
+            <column name="DESCRIPTION" value="Документ"/>
+        </insert>
+
+        <insert  schemaName="REPOSITORY" tableName="FILE_EXTENSION">
+            <column name="NAME" value="docx"/>
+            <column name="DESCRIPTION" value="Документ"/>
+        </insert>
+
+        <insert  schemaName="REPOSITORY" tableName="FILE_EXTENSION">
+            <column name="NAME" value="xls"/>
+            <column name="DESCRIPTION" value="Электронная таблица"/>
+        </insert>
+
+        <insert  schemaName="REPOSITORY" tableName="FILE_EXTENSION">
+            <column name="NAME" value="xlsx"/>
+            <column name="DESCRIPTION" value="Электронная таблица"/>
+        </insert>
+
+        <insert  schemaName="REPOSITORY" tableName="FILE_EXTENSION">
+            <column name="NAME" value="pdf"/>
+            <column name="DESCRIPTION" value="PDF-документ"/>
+        </insert>
+
+        <insert  schemaName="REPOSITORY" tableName="FILE_EXTENSION">
+            <column name="NAME" value="txt"/>
+            <column name="DESCRIPTION" value="Текстовый файл"/>
+        </insert>
+
+        <insert  schemaName="REPOSITORY" tableName="FILE_EXTENSION">
+            <column name="NAME" value="zip"/>
+            <column name="DESCRIPTION" value="Архив"/>
+        </insert>
+
+        <insert  schemaName="REPOSITORY" tableName="FILE_EXTENSION">
+            <column name="NAME" value="rar"/>
+            <column name="DESCRIPTION" value="Архив"/>
+        </insert>
+
+        <insert  schemaName="REPOSITORY" tableName="FILE_EXTENSION">
+            <column name="NAME" value="7z"/>
+            <column name="DESCRIPTION" value="Архив"/>
+        </insert>
+
+        <insert  schemaName="REPOSITORY" tableName="FILE_EXTENSION">
+            <column name="NAME" value="gzip"/>
+            <column name="DESCRIPTION" value="Архив"/>
+        </insert>
+
+        <insert  schemaName="REPOSITORY" tableName="FILE_EXTENSION">
+            <column name="NAME" value="mp4"/>
+            <column name="DESCRIPTION" value="Видеофайл"/>
+        </insert>
+
+        <insert  schemaName="REPOSITORY" tableName="FILE_EXTENSION">
+            <column name="NAME" value="avi"/>
+            <column name="DESCRIPTION" value="Видеофайл"/>
+        </insert>
+
+        <insert  schemaName="REPOSITORY" tableName="FILE_EXTENSION">
+            <column name="NAME" value="mkv"/>
+            <column name="DESCRIPTION" value="Видеофайл"/>
+        </insert>
+
+        <insert  schemaName="REPOSITORY" tableName="FILE_EXTENSION">
+            <column name="NAME" value="wmv"/>
+            <column name="DESCRIPTION" value="Видеофайл"/>
+        </insert>
+
+        <insert  schemaName="REPOSITORY" tableName="FILE_EXTENSION">
+            <column name="NAME" value="flv"/>
+            <column name="DESCRIPTION" value="Видеофайл"/>
+        </insert>
+
+        <insert  schemaName="REPOSITORY" tableName="FILE_EXTENSION">
+            <column name="NAME" value="mpeg"/>
+            <column name="DESCRIPTION" value="Видеофайл"/>
+        </insert>
+
+        <insert  schemaName="REPOSITORY" tableName="FILE_EXTENSION">
+            <column name="NAME" value="wmv"/>
+            <column name="DESCRIPTION" value="Видеофайл"/>
+        </insert>
+
+        <insert  schemaName="REPOSITORY" tableName="FILE_EXTENSION">
+            <column name="NAME" value="mp3"/>
+            <column name="DESCRIPTION" value="Аудиофайл"/>
+        </insert>
+
+        <insert  schemaName="REPOSITORY" tableName="FILE_EXTENSION">
+            <column name="NAME" value="wav"/>
+            <column name="DESCRIPTION" value="Аудиофайл"/>
+        </insert>
+
+        <insert  schemaName="REPOSITORY" tableName="FILE_EXTENSION">
+            <column name="NAME" value="midi"/>
+            <column name="DESCRIPTION" value="Аудиофайл"/>
+        </insert>
+
+        <insert  schemaName="REPOSITORY" tableName="FILE_EXTENSION">
+            <column name="NAME" value="aac"/>
+            <column name="DESCRIPTION" value="Аудиофайл"/>
+        </insert>
+
+        <insert  schemaName="REPOSITORY" tableName="FILE_EXTENSION">
+            <column name="NAME" value="ppt"/>
+            <column name="DESCRIPTION" value="Презентация"/>
+        </insert>
+
+        <insert  schemaName="REPOSITORY" tableName="FILE_EXTENSION">
+            <column name="NAME" value="pptx"/>
+            <column name="DESCRIPTION" value="Презентация"/>
+        </insert>
+
+        <insert  schemaName="REPOSITORY" tableName="FILE_EXTENSION">
+            <column name="NAME" value=""/>
+            <column name="DESCRIPTION" value="Аудиофайл"/>
+        </insert>
+
+        <insert  schemaName="REPOSITORY" tableName="FILE_EXTENSION">
+            <column name="NAME" value=""/>
+            <column name="DESCRIPTION" value="Образ оптического диска"/>
+        </insert>
+
+        <insert  schemaName="REPOSITORY" tableName="FILE_EXTENSION">
+            <column name="NAME" value="torrent"/>
+            <column name="DESCRIPTION" value="Торрент-файл"/>
+        </insert>
+
+        <insert  schemaName="REPOSITORY" tableName="FILE_EXTENSION">
+            <column name="NAME" value="djvu"/>
+            <column name="DESCRIPTION" value="Сканированный документ"/>
+        </insert>
+
+        <insert  schemaName="REPOSITORY" tableName="FILE_EXTENSION">
+            <column name="NAME" value="fb2"/>
+            <column name="DESCRIPTION" value="Электронная книга"/>
+        </insert>
+
+        <insert  schemaName="REPOSITORY" tableName="FILE_EXTENSION">
+            <column name="NAME" value="epub"/>
+            <column name="DESCRIPTION" value="Электронная книга"/>
+        </insert>
+
+        <insert  schemaName="REPOSITORY" tableName="FILE_EXTENSION">
+            <column name="NAME" value="mobi"/>
+            <column name="DESCRIPTION" value="Электронная книга"/>
+        </insert>
+
+        <insert  schemaName="REPOSITORY" tableName="FILE_EXTENSION">
+            <column name="NAME" value="psd"/>
+            <column name="DESCRIPTION" value="Файл изображений/проектов Photoshop"/>
+        </insert>
+
+
+
+
+
+
+    </changeSet>
+</databaseChangeLog>
