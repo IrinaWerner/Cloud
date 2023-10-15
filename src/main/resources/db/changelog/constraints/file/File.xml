@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet id="FILE-001" author="werner_id">
+        <preConditions>
+            <not>
+                <foreignKeyConstraintExists foreignKeyName="FK-FILE-FILE_EXTENSION"/>
+            </not>
+        </preConditions>
+        <addForeignKeyConstraint
+                baseTableName="FILE"
+
+                baseColumnNames="FILE_EXTENSION_ID"
+
+                constraintName="FK-FILE-FILE_EXTENSION"
+
+                referencedTableName="FILE_EXTENSION"
+
+                referencedColumnNames="FILE_EXTENSION_ID"
+                onUpdate="RESTRICT"
+                onDelete="RESTRICT"/>
+    </changeSet>
+
+
+
+
+    <changeSet id="FILE-002" author="werner_id">
+        <preConditions>
+            <not>
+                <foreignKeyConstraintExists foreignKeyName="FK-FILE-TYPE_OF_FILE_ACCESS"/>
+            </not>
+        </preConditions>
+        <addForeignKeyConstraint
+                baseTableName="FILE"
+
+                baseColumnNames="TYPE_OF_FILE_ACCESS_ID"
+
+                constraintName="FK-FILE-TYPE_OF_FILE_ACCESS"
+
+                referencedTableName="TYPE_OF_FILE_ACCESS"
+
+                referencedColumnNames="TYPE_OF_FILE_ACCESS_ID"
+                onUpdate="RESTRICT"
+                onDelete="RESTRICT"/>
+    </changeSet>
+
+
+
+</databaseChangeLog>

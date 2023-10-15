@@ -31,7 +31,7 @@
                 <constraints nullable="false"/>
             </column>
 
-            <column name="TYPE_OF_FILE_ACCESS" type="INT">
+            <column name="TYPE_OF_FILE_ACCESS_ID" type="INT">
                 <constraints nullable="false"/>
             </column>
 

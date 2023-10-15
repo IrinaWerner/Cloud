@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="FAVORITES_001" author="werner_id">
+        <preConditions>
+            <not>
+                <foreignKeyConstraintExists foreignKeyName="FK-FAVORITES-FILE"/>
+            </not>
+        </preConditions>
+        <addForeignKeyConstraint
+                baseTableName="FAVORITES"
+
+                baseColumnNames="FILE_ID"
+
+                constraintName="FK-FAVORITES-FILE"
+
+                referencedTableName="FILE"
+
+                referencedColumnNames="FILE_ID"
+                onUpdate="RESTRICT"
+                onDelete="RESTRICT"/>
+    </changeSet>
+
+    <changeSet id="FAVORITES_002" author="werner_id">
+        <preConditions>
+            <not>
+                <foreignKeyConstraintExists foreignKeyName="FK-FAVORITES-USERS"/>
+            </not>
+        </preConditions>
+        <addForeignKeyConstraint
+                baseTableName="FAVORITES"
+
+                baseColumnNames="USER_ID"
+
+                constraintName="FK-FAVORITES-USERS"
+
+                referencedTableName="USERS"
+
+                referencedColumnNames="USER_ID"
+                onUpdate="RESTRICT"
+                onDelete="RESTRICT"/>
+    </changeSet>
+
+
+</databaseChangeLog>

@@ -29,10 +29,6 @@
 
             <column name="DESCRIPTION" type="VARCHAR(256)"/>
 
-            <column name="FILE_EXTENSION_ID" type="INT">
-                <constraints nullable="false"/>
-            </column>
-
             <column name="CREATED" type="TIMESTAMP" defaultValue="CURRENT_TIMESTAMP">
                 <constraints nullable="false"/>
             </column>
