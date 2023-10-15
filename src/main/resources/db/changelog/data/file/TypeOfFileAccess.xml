@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet id="TYPE_OF_FILE_ACCESS-001" author="werner_id">
+
+        <preConditions>
+            <tableIsEmpty schemaName="REPOSITORY" tableName="TYPE_OF_FILE_ACCESS"/>
+        </preConditions>
+
+        <insert  schemaName="REPOSITORY" tableName="TYPE_OF_FILE_ACCESS">
+            <column name="NAME" value="NONE"/>
+            <column name="DESCRIPTION" value="Доступ к файлу отсутствует"/>
+        </insert>
+
+        <insert  schemaName="REPOSITORY" tableName="TYPE_OF_FILE_ACCESS">
+            <column name="NAME" value="READ"/>
+            <column name="DESCRIPTION" value="Доступ к файлу в режиме чтения"/>
+        </insert>
+
+        <insert  schemaName="REPOSITORY" tableName="TYPE_OF_FILE_ACCESS">
+            <column name="NAME" value="WRITE"/>
+            <column name="DESCRIPTION" value="Полный доступ к файлу"/>
+        </insert>
+
+    </changeSet>
+</databaseChangeLog>
