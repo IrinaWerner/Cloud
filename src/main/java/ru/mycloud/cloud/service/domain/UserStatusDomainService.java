@@ -6,6 +6,8 @@ import org.springframework.stereotype.Service;
 import ru.mycloud.cloud.entity.user.UserStatus;
 import ru.mycloud.cloud.repository.UserStatusRepository;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class UserStatusDomainService {
@@ -16,6 +18,16 @@ public class UserStatusDomainService {
     public UserStatus getUserStatus(Long id){
       return repository.getReferenceById(id);
 
+    }
+
+    @Transactional
+    public List<UserStatus> getAllUserStatus(){
+        return repository.findAll();
+    }
+
+    @Transactional
+    public void deleteUserStatusById(Long id){
+        repository.deleteById(id);
     }
 
 }
