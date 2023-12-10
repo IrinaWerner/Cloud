@@ -30,4 +30,6 @@ public class UserStatusDomainService {
         repository.deleteById(id);
     }
 
+
+
 }
