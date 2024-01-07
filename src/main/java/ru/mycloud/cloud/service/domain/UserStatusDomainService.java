@@ -4,7 +4,7 @@ import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import ru.mycloud.cloud.entity.user.UserStatus;
-import ru.mycloud.cloud.repository.UserStatusRepository;
+import ru.mycloud.cloud.repository.user.UserStatusRepository;
 
 import java.util.List;
 

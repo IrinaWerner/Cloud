@@ -7,7 +7,7 @@ import ru.mycloud.cloud.dto.request.user.UserAddRequest;
 import ru.mycloud.cloud.dto.response.user.UserResponse;
 import ru.mycloud.cloud.mapper.user.UserMapper;
 import ru.mycloud.cloud.mapper.user.UserResponseMapper;
-import ru.mycloud.cloud.repository.UserRepository;
+import ru.mycloud.cloud.repository.user.UserRepository;
 
 import java.util.List;
 
