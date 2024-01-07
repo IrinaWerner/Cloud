@@ -14,7 +14,7 @@ public class UserService {
     private final UserDomainService userDomainService;
 
 
-    public UserStatus getUserUserStatus(Long statusId){
+    public UserStatus getUserStatus(Long statusId){
         return userStatusDomainService.getUserStatus(statusId);
     }
 
