@@ -8,6 +8,7 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 @RequiredArgsConstructor
 public class RoleAddRequest {
+    private Long roleId;
     private String name;
     private String description;
 }

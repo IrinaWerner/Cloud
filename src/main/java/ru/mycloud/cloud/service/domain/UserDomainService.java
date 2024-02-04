@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import ru.mycloud.cloud.dto.request.user.UserAddRequest;
 import ru.mycloud.cloud.dto.response.user.UserResponse;
 import ru.mycloud.cloud.mapper.user.UserMapper;
+import ru.mycloud.cloud.mapper.user.UserMerger;
 import ru.mycloud.cloud.mapper.user.UserResponseMapper;
 import ru.mycloud.cloud.repository.user.UserRepository;
 
@@ -18,6 +19,7 @@ public class UserDomainService {
     private final UserRepository repository;
     private final UserResponseMapper userResponseMapper;
     private final UserMapper userMapper;
+    private final UserMerger merger;
 
 
     @Transactional
@@ -43,5 +45,11 @@ public class UserDomainService {
         repository.deleteById(id);
     }
 
+
+    @Transactional
+    public void editUser(UserAddRequest request) {
+        var user = repository.getReferenceById(request.getUserId());
+        repository.save(merger.merge(user,request));
+    }
 
 }
