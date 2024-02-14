@@ -33,6 +33,9 @@ public class File extends EntityWithName {
     @JoinColumn(name = "TYPE_OF_FILE_ACCESS_ID")
     private TypeOfFileAccess typeOfFileAccess;
 
+    @Column(name = "SIZE")
+    private Long size;
+
     public File(Long id) {
         this.id = id;
     }
