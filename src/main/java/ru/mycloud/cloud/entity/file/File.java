@@ -33,6 +33,10 @@ public class File extends EntityWithName {
     @JoinColumn(name = "TYPE_OF_FILE_ACCESS_ID")
     private TypeOfFileAccess typeOfFileAccess;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "FOLDER_ID")
+    private Folder folder;
+
     @Column(name = "SIZE")
     private Long size;
 
