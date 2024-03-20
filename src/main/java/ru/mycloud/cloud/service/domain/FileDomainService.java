@@ -14,7 +14,7 @@ import java.util.List;
 
 /**
  *
- * Доменный сервис для управления сущностью Role
+ * Доменный сервис для управления сущностью File
  * @author IrinaWerner
  * @see ru.mycloud.cloud.entity.file.File*/
 
