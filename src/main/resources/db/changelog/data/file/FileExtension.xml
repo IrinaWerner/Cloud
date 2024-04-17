@@ -189,6 +189,10 @@
             <column name="DESCRIPTION" value="Файл изображений/проектов Photoshop"/>
         </insert>
 
+        <insert  schemaName="REPOSITORY" tableName="FILE_EXTENSION">
+            <column name="NAME" value="?"/>
+            <column name="DESCRIPTION" value="Неизвестный файл"/>
+        </insert>
 
 
 
