@@ -51,7 +51,7 @@ class FileDomainServiceTest {
     }
 
     @Test
-    void getFileById(){
+    void getFileByIdTest(){
         Mockito.when(repository.getReferenceById(anyLong())).thenReturn(getFile());
         Mockito.when(responseMapper.from(any(File.class))).thenReturn(getFileResponse());
 
