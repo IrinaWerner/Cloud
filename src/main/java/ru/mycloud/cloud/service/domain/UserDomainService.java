@@ -10,6 +10,7 @@ import ru.mycloud.cloud.mapper.user.UserMerger;
 import ru.mycloud.cloud.mapper.user.UserResponseMapper;
 import ru.mycloud.cloud.repository.user.UserRepository;
 
+import java.security.InvalidParameterException;
 import java.util.List;
 
 /**
@@ -50,7 +51,9 @@ public class UserDomainService {
 
     @Transactional
     public UserResponse getUser(Long userId) {
-        return userResponseMapper.from(repository.getReferenceById(userId));
+        return userResponseMapper.from(
+                repository.findById(userId)
+                        .orElseThrow( () -> new InvalidParameterException("Пользователь не найден!")));
     }
 
 
@@ -72,7 +75,9 @@ public class UserDomainService {
 
     @Transactional
     public void deleteUser(Long id) {
-        repository.deleteById(id);
+        if (repository.existsById(id))
+            repository.deleteById(id);
+        else throw new InvalidParameterException("Пользователь не найден!");
     }
 
     /**
@@ -80,9 +85,14 @@ public class UserDomainService {
      * @param request Данные для редактирования сущности User
      * */
     @Transactional
-    public void editUser(UserAddRequest request) {
-        var user = repository.getReferenceById(request.getUserId());
+    public void editUser(Long id, UserAddRequest request) {
+        var user = repository.getReferenceById(id);
         repository.save(merger.merge(user, request));
+    }
+
+    @Transactional
+    public boolean userLoginExists(String login) {
+      return repository.existsUserByLogin(login);
     }
 
 }
