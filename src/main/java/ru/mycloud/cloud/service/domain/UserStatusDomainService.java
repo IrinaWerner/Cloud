@@ -8,12 +8,23 @@ import ru.mycloud.cloud.repository.user.UserStatusRepository;
 
 import java.util.List;
 
+/**
+ * Доменный сервис для управления сущностью UserStatus
+ *
+ * @author IrinaWerner
+ * @see ru.mycloud.cloud.entity.user.UserStatus
+ */
 @Service
 @RequiredArgsConstructor
 public class UserStatusDomainService {
 
     private final UserStatusRepository repository;
 
+    /**
+     * Сервис получения статуса пользователя
+     * @param id статуса
+     * @return  Возвращает
+     * */
     @Transactional
     public UserStatus getUserStatus(Long id){
       return repository.getReferenceById(id);
