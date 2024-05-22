@@ -8,7 +8,6 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 @ToString
 public class UserAddRequest {
-    private Long userId;
     private String login;
     private String password;
     private String fullName;

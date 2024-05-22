@@ -6,4 +6,8 @@ import ru.mycloud.cloud.entity.user.User;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
+
+    boolean existsUserByLogin(String login);
+
+
 }
